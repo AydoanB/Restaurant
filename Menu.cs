@@ -20,17 +20,5 @@ namespace ConsoleApp1
         {
             dishes.Add(dish);
         }
-
-        public IDish ReturnDish(string name)
-        {
-            var dish = this.dishes.FirstOrDefault(x => x.Name.Contains(name));
-
-            if (dish == null)
-            {
-                throw new ArgumentOutOfRangeException("Не съществува / Missing dish");
-            }
-
-            return dish;
-        }
     }
 }
