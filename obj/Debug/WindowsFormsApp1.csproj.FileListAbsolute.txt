@@ -10,3 +10,16 @@ C:\Users\Aiduan\Desktop\Exam\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.
 C:\Users\Aiduan\Desktop\Exam\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
 C:\Users\Aiduan\Desktop\Exam\obj\Debug\WindowsFormsApp1.exe
 C:\Users\Aiduan\Desktop\Exam\obj\Debug\WindowsFormsApp1.pdb
+C:\Users\Aiduan\Desktop\Softuni\github\Restaurant\obj\Debug\WindowsFormsApp1.csproj.AssemblyReference.cache
+C:\Users\Aiduan\Desktop\Softuni\github\Restaurant\obj\Debug\WindowsFormsApp1.csproj.SuggestedBindingRedirects.cache
+C:\Users\Aiduan\Desktop\Softuni\github\Restaurant\obj\Debug\WindowsFormsApp1.MenuCreator.resources
+C:\Users\Aiduan\Desktop\Softuni\github\Restaurant\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\Aiduan\Desktop\Softuni\github\Restaurant\obj\Debug\WindowsFormsApp1.Receipt.resources
+C:\Users\Aiduan\Desktop\Softuni\github\Restaurant\obj\Debug\WindowsFormsApp1.RestaurantForm.resources
+C:\Users\Aiduan\Desktop\Softuni\github\Restaurant\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.cache
+C:\Users\Aiduan\Desktop\Softuni\github\Restaurant\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
+C:\Users\Aiduan\Desktop\Softuni\github\Restaurant\obj\Debug\WindowsFormsApp1.exe
+C:\Users\Aiduan\Desktop\Softuni\github\Restaurant\obj\Debug\WindowsFormsApp1.pdb
+C:\Users\Aiduan\Desktop\Softuni\github\Restaurant\bin\Debug\WindowsFormsApp1.exe.config
+C:\Users\Aiduan\Desktop\Softuni\github\Restaurant\bin\Debug\WindowsFormsApp1.exe
+C:\Users\Aiduan\Desktop\Softuni\github\Restaurant\bin\Debug\WindowsFormsApp1.pdb

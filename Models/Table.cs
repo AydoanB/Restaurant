@@ -1,16 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace ConsoleApp1
 {
     public class Table
     {
-        private readonly List<IDish> dishesOnTable = new List<IDish>();
+        private readonly List<IDish> dishesOnTable;
         public List<IDish> DishesOnTable => dishesOnTable;
         public Table(int tableNum)
         {
             this.TableNumber = tableNum;
+            dishesOnTable = new List<IDish>();
         }
         private int tableNumber;
         public int TableNumber
@@ -25,13 +27,11 @@ namespace ConsoleApp1
                 tableNumber = value;
             }
         }
-        public decimal Check { get; set; }
 
-        public void AddDishToSpeciefiedTable(IDish dish)
-        {
-            dishesOnTable.Add(dish);
-            Check += dish.Price;
-        }
+        public decimal Check => this.dishesOnTable.Sum(d => d.Price);
+        public double Calories => this.dishesOnTable.Sum(d => d.Calories);
+
+
 
 
     }

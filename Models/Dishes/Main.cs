@@ -2,7 +2,7 @@
 {
     public class Main : Dish 
     {
-        public Main(string name, double weight, decimal price) : base( name, weight, price)
+        public Main(string category, string name, double weight, decimal price) : base(category, name, weight, price)
         {
             this.Calories = Weight * 0.76;
         }

@@ -1,15 +1,19 @@
 ﻿using System;
 using System.Linq;
-using System.Text;
 
 namespace ConsoleApp1
 {
-    public abstract class Dish : IDish
+    public class Dish : IDish
     {
         private string[] possibleDishCategories = { "salad", "soup", "main", "dessert", "drink" };
 
-        public Dish(string name, double weight, decimal price)
+        public Dish(string category, string name, double weight, decimal price)
         {
+            if (possibleDishCategories.Contains(category))
+            {
+                //TODO
+                this.Category=category;
+            }
             this.Name = name;
             this.Weight = weight;
             this.Price = price;
