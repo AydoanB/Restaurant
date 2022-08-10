@@ -1,12 +1,9 @@
-﻿namespace ConsoleApp1
+﻿using WindowsFormsApp1.Models.Dishes;
+
+namespace ConsoleApp1
 {
     public class Drink : Dish
     {
-        public Drink(string category, string name, double weight, decimal price) : base(category,name, weight, price)
-        {
-            Calories = Weight * 0.1 + 50;
-        }
-
-      
+        public override double Calories => this.Weight * 1.5;
     }
 }
