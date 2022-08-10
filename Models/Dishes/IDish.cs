@@ -2,7 +2,6 @@
 {
     public interface IDish
     {
-        string Category { get; set; }
         
         string Name { get; set; }
          

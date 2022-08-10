@@ -1,29 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
 using System.Windows.Forms;
 using ConsoleApp1;
-using WindowsFormsApp1.Controller;
-using Menu = ConsoleApp1.Menu;
+using RestaurantManager.Controller;
+using RestaurantManager.Services;
+using WindowsFormsApp1;
 
-namespace WindowsFormsApp1
+namespace RestaurantManager
 {
+
     public partial class MenuCreator : Form
     {
-        private readonly MenuController menuController;
+        //private readonly List<IDish> Dishes = new List<IDish>();
+        private readonly MenuService menuService;
 
         public MenuCreator()
         {
             InitializeComponent();
-            this.menuController = new MenuController();
-        }
 
+            this.menuService = new MenuService();
+        }
 
         private void button_Add_Click(object sender, EventArgs e)
         {
@@ -32,23 +29,35 @@ namespace WindowsFormsApp1
             decimal price = decimal.Parse(textBox_Price.Text.Trim());
             double weight = double.Parse(textBox_Weight.Text.Trim());
 
+            var model = new DishInputModel()
+            {
+                Name = name,
+                Category = category,
+                Price = price,
+                Weight = weight,
+            };
 
-            IDish dish = menuController.AddDishToTheMenu(category, name, weight, price);
+            menuService.CreateDish(model);
 
-            listBox1.Items.Add(dish.ToString());
+            listBox1.Items.AddRange(menuService.GetAllForMenuList().ToArray());
 
-            textBox_Name.Text = "";
-            textBox_Category.Text = "";
-            textBox_Price.Text = "";
-            textBox_Weight.Text = "";
+            ClearInputs();
         }
 
         private void button_Start_Click(object sender, EventArgs e)
         {
-            RestaurantForm rs = new RestaurantForm();
+            RestaurantForm rs = new RestaurantForm(null);
             rs.ShowDialog();
         }
 
-       
+        private void ClearInputs()
+        {
+            textBox_Name.Clear();
+            textBox_Category.Clear();
+            textBox_Price.Clear();
+            textBox_Weight.Clear();
+        }
+
+
     }
 }

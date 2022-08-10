@@ -2,13 +2,16 @@
 
 namespace WindowsFormsApp1.Models.Dishes
 {
-    public class Dish : IDish
+    public abstract class Dish : IDish
     {
-        //private string[] possibleDishCategories = { "salad", "soup", "main", "dessert", "drink" };
+        protected Dish(string name, double weight, decimal price)
+        {
+            Name = name;
+            Weight = weight;
+            Price = price;
+        }
 
         public string Name { get; set; }
-
-        public string Category { get; set; }
 
         public double Weight { get; set; }
 
