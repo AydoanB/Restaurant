@@ -4,6 +4,7 @@ using System.Linq;
 using ConsoleApp1;
 using RestaurantManager.Controller;
 using RestaurantManager.Factories;
+using WindowsFormsApp1.Models.Dishes;
 
 namespace RestaurantManager.Services
 {
@@ -26,9 +27,14 @@ namespace RestaurantManager.Services
             this.dishes.Add(dish);
         }
 
+        public IEnumerable<IDish> GetAll()
+        {
+            return this.dishes;
+        }
+
         public IEnumerable<string> GetAllForMenuList()
         {
-            return this.dishes.Select(x => x.ToString());
+            return GetAll().Select(x => x.ToString());
         }
     }
 }

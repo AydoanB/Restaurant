@@ -46,7 +46,7 @@ namespace RestaurantManager
 
         private void button_Start_Click(object sender, EventArgs e)
         {
-            RestaurantForm rs = new RestaurantForm(null);
+            RestaurantForm rs = new RestaurantForm(menuService.GetAll());
             rs.ShowDialog();
         }
 
