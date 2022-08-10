@@ -1,5 +1,5 @@
 ﻿
-namespace WindowsFormsApp1
+namespace RestaurantManager
 {
     partial class Receipt
     {
@@ -35,8 +35,6 @@ namespace WindowsFormsApp1
             this.label3 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.textBox2_Calories = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -60,7 +58,7 @@ namespace WindowsFormsApp1
             // 
             // textBox2_TotalSum
             // 
-            this.textBox2_TotalSum.Location = new System.Drawing.Point(265, 487);
+            this.textBox2_TotalSum.Location = new System.Drawing.Point(265, 509);
             this.textBox2_TotalSum.Name = "textBox2_TotalSum";
             this.textBox2_TotalSum.Size = new System.Drawing.Size(100, 22);
             this.textBox2_TotalSum.TabIndex = 4;
@@ -68,9 +66,9 @@ namespace WindowsFormsApp1
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(134, 490);
+            this.label3.Location = new System.Drawing.Point(140, 509);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(125, 17);
+            this.label3.Size = new System.Drawing.Size(119, 16);
             this.label3.TabIndex = 5;
             this.label3.Text = "Вашата сметка е:";
             // 
@@ -94,29 +92,11 @@ namespace WindowsFormsApp1
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // textBox2_Calories
-            // 
-            this.textBox2_Calories.Location = new System.Drawing.Point(265, 531);
-            this.textBox2_Calories.Name = "textBox2_Calories";
-            this.textBox2_Calories.Size = new System.Drawing.Size(100, 22);
-            this.textBox2_Calories.TabIndex = 9;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(121, 531);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(142, 17);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "Погълнати калории:";
-            // 
             // Receipt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(377, 627);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox2_Calories);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label3);
@@ -138,7 +118,5 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox2_Calories;
-        private System.Windows.Forms.Label label2;
     }
 }

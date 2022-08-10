@@ -9,23 +9,21 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ConsoleApp1;
 
-namespace WindowsFormsApp1
+namespace RestaurantManager
 {
     public partial class Receipt : Form
     {
-        private List<IDish> dishesForReceipt;
-        public Receipt(List<IDish> dishesOnTable, decimal sum,double calories)
+        public Receipt(Table table)
         {
             InitializeComponent();
-            dishesForReceipt = new List<IDish>();
 
-            foreach (var dish in dishesOnTable)
+            foreach (var dish in table.GetAll())
             {
                 listBox1_OrderedFoodsPerTable.Items.Add(dish.ToString());
             }
 
-            textBox2_TotalSum.Text = $"{sum} лв.";
-            textBox2_Calories.Text = $"{calories} kcal";
+            textBox2_TotalSum.Text = $"{table.Check} лв.";
+            //textBox2_Calories.Text = $"{calories} kcal";
 
         }
 

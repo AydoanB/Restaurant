@@ -2,10 +2,10 @@
 using System.Linq;
 using ConsoleApp1;
 
-namespace WindowsFormsApp1
+namespace RestaurantManager
 {
-    public static class Restaurant
+    public  class Restaurant
     {
-        public static List<Table> Tables = new List<Table>();
+        public static ICollection<Table> Tables = new List<Table>();
     }
 }

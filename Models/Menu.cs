@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
+﻿using System.Collections.Generic;
 
 namespace ConsoleApp1
 {
     public static class Menu
     {
-        public static List<IDish> Dishes = new List<IDish>();
-
+        public static ICollection<IDish> Dishes = new List<IDish>();
     }
 }

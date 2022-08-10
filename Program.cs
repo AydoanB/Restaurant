@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ConsoleApp1;
 
-namespace WindowsFormsApp1
+namespace RestaurantManager
 {
     static class Program
     {

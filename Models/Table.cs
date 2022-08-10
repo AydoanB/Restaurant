@@ -8,31 +8,25 @@ namespace ConsoleApp1
     public class Table
     {
         private readonly List<IDish> dishesOnTable;
-        public List<IDish> DishesOnTable => dishesOnTable;
-        public Table(int tableNum)
+
+        public Table(int tableNumber, List<IDish> dishesOnTable)
         {
-            this.TableNumber = tableNum;
-            dishesOnTable = new List<IDish>();
+            this.dishesOnTable = dishesOnTable;
+            this.TableNumber = tableNumber;
         }
-        private int tableNumber;
-        public int TableNumber
-        {
-            get { return tableNumber; }
-            set
-            {
-                if (value < 1 || value > 20)
-                {
-                    throw new ArgumentOutOfRangeException("Възможни номера от 1 до 20 / Possible numbers between 1 and 20");
-                }
-                tableNumber = value;
-            }
-        }
+
+        public int TableNumber { get; set; }
 
         public decimal Check => this.dishesOnTable.Sum(d => d.Price);
-        public double Calories => this.dishesOnTable.Sum(d => d.Calories);
 
+        public void AddDishes(List<IDish> orderedDishes)
+        {
+            this.dishesOnTable.AddRange(orderedDishes);
+        }
 
-
-
+        public List<IDish> GetAll()
+        {
+            return this.dishesOnTable;
+        }
     }
 }

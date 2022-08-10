@@ -1,29 +1,29 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using ConsoleApp1;
-using WindowsFormsApp1.Controller;
-using Menu = ConsoleApp1.Menu;
+using RestaurantManager;
+using RestaurantManager.Services;
 
 namespace WindowsFormsApp1
 {
     public partial class RestaurantForm : Form
     {
-        //Restaurant restaurant = new Restaurant();
-        private RestaurantController restaurantController;
-        private Table t = null;
-        public RestaurantForm()
+        private readonly IEnumerable<IDish> dishes;
+        private readonly RestaurantService restaurantService;
+        
+        private readonly ReceiptService receiptService;
+
+        public RestaurantForm(IEnumerable<IDish> Dishes)
         {
+            this.dishes = Dishes;
+            this.restaurantService = new RestaurantService();
+            this.receiptService = new ReceiptService();
+            
             InitializeComponent();
 
-            foreach (var dish in ConsoleApp1.Menu.Dishes)
+            foreach (var dish in Dishes)
             {
                 checkedListBox1.Items.Add(dish);
             }
@@ -38,26 +38,36 @@ namespace WindowsFormsApp1
 
             this.UncheckSelectedDishes();
 
-            restaurantController.AddDishToTheTable(SelectedDishes(), tableNumber);
+            var selectedDishes = checkedListBox1.SelectedItems.Cast<IDish>().ToList();
 
-            if (!comboBox1_OccupiedTables.Items.Contains(t.TableNumber))
-            {
-                comboBox1_OccupiedTables.Items.Add(t.TableNumber);
-            }
+            var table = restaurantService.MakeOrder(tableNumber, selectedDishes);
+
+            MarkTableAsOccupied(table);
+
+            //restaurantController.AddDishToTheTable(SelectedDishes(), tableNumber);
+            //if (!comboBox1_OccupiedTables.Items.Contains(t.TableNumber))
+            //{
+            //comboBox1_OccupiedTables.Items.Add(t.TableNumber);
+            //}
         }
 
         private void button1_FInishTable_Click(object sender, EventArgs e)
         {
 
-            var selection = int.Parse(comboBox1_OccupiedTables.Text);
+            var tableNumber = int.Parse(comboBox1_OccupiedTables.Text);
+            
+            var table = restaurantService.GetByTableNumber(tableNumber);
 
-            decimal sumForSpecifiedTable = Restaurant.Tables.FirstOrDefault(n => n.TableNumber == selection).Check;
-            double caloriesForSpecifiedTable = Restaurant.Tables.FirstOrDefault(n => n.TableNumber == selection).Calories;
-            List<IDish> dishesOnTableForReceipt =
-                Restaurant.Tables.FirstOrDefault(x => x.TableNumber == selection).DishesOnTable;
-
-            Receipt receipt = new Receipt(dishesOnTableForReceipt, sumForSpecifiedTable, caloriesForSpecifiedTable);
+            //receiptService.ShowReceipt(tableNumber, table);
+            
+            Receipt receipt = new Receipt(table);
+            
             receipt.ShowDialog();
+
+            // decimal sumForSpecifiedTable = Restaurant.Tables.FirstOrDefault(n => n.TableNumber == selection).Check;
+
+            //Receipt receipt = new Receipt(dishesOnTableForReceipt, sumForSpecifiedTable, caloriesForSpecifiedTable);
+            // receipt.ShowDialog();
         }
 
         private void UncheckSelectedDishes()
@@ -73,10 +83,9 @@ namespace WindowsFormsApp1
             }
         }
 
-        private List<IDish> SelectedDishes()
+        private void MarkTableAsOccupied(int tableNumber)
         {
-            List<IDish> dishes = checkedListBox1.CheckedItems.Cast<IDish>().ToList();
-            return dishes;
+            this.comboBox1_OccupiedTables.Items.Add(tableNumber);
         }
 
     }
