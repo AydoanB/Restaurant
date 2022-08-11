@@ -15,7 +15,7 @@ namespace RestaurantManager.Services
 
             if (table == null)
             {
-                table = new Table(tableNumber, selectedDishes);
+                table = new Table(tableNumber);
 
                 Restaurant.Tables.Add(table);
             }
