@@ -154,6 +154,8 @@
   <ItemGroup>
     <Compile Include="Factories\DishFactory.cs" />
     <Compile Include="Services\IMenuService.cs" />
+    <Compile Include="Services\IReceiptService.cs" />
+    <Compile Include="Services\IRestaurantService.cs" />
     <Compile Include="Services\MenuService.cs" />
     <Compile Include="Services\ReceiptService.cs" />
     <Compile Include="Services\RestaurantService.cs" />

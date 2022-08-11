@@ -5,7 +5,7 @@ using WindowsFormsApp1.Models.Dishes;
 
 namespace RestaurantManager.Services
 {
-    public class RestaurantService
+    public class RestaurantService : IRestaurantService
     {
         public Restaurant Restaurant => new Restaurant();
 
