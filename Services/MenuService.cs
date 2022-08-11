@@ -27,14 +27,14 @@ namespace RestaurantManager.Services
             this.dishes.Add(dish);
         }
 
-        public IEnumerable<IDish> GetAll()
+        public ICollection<IDish> GetAll()
         {
             return this.dishes;
         }
 
-        public IEnumerable<string> GetAllForMenuList()
+        public string GetAllForMenuList()
         {
-            return GetAll().Select(x => x.ToString());
+            return GetAll().Select(x=>x.ToString()).LastOrDefault();
         }
     }
 }

@@ -8,6 +8,6 @@ namespace RestaurantManager.Services
     {
         void CreateDish(DishInputModel model);
 
-        IEnumerable<string> GetAllForMenuList();
+        string GetAllForMenuList();
     }
 }

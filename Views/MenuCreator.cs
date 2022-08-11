@@ -39,7 +39,7 @@ namespace RestaurantManager
 
             menuService.CreateDish(model);
 
-            listBox1.Items.AddRange(menuService.GetAllForMenuList().ToArray());
+            listBox1.Items.Add(menuService.GetAllForMenuList());
 
             ClearInputs();
         }
