@@ -13,13 +13,10 @@ namespace WindowsFormsApp1
         private readonly IEnumerable<IDish> dishes;
         private readonly RestaurantService restaurantService;
 
-        private readonly ReceiptService receiptService;
-
         public RestaurantForm(IEnumerable<IDish> Dishes)
         {
             this.dishes = Dishes;
             this.restaurantService = new RestaurantService();
-            this.receiptService = new ReceiptService();
 
             InitializeComponent();
 
