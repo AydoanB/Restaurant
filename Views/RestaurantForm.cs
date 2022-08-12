@@ -36,9 +36,9 @@ namespace WindowsFormsApp1
 
             comboBox2_Tables.Text = "Изберете маса";
 
-            this.UncheckSelectedDishes();
+            var selectedDishes = GetAllSelectedDishes();
 
-            var selectedDishes = getAllSelectedDishes();
+            this.UncheckSelectedDishes();
 
             var table = restaurantService.MakeOrder(tableNumber, selectedDishes);
 
@@ -78,13 +78,15 @@ namespace WindowsFormsApp1
             }
         }
 
-        private List<IDish> getAllSelectedDishes()
+        private List<IDish> GetAllSelectedDishes()
         {
             var selectedDishes = new List<IDish>();
+
             foreach (var dish in checkedListBox1.CheckedItems)
             {
                 selectedDishes.Add((IDish)dish);
             }
+
             return selectedDishes;
         }
 
