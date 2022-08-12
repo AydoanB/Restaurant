@@ -12,7 +12,6 @@ namespace RestaurantManager
 
     public partial class MenuCreator : Form
     {
-        //private readonly List<IDish> Dishes = new List<IDish>();
         private readonly MenuService menuService;
 
         public MenuCreator()
