@@ -23,8 +23,6 @@ namespace RestaurantManager
             }
 
             textBox2_TotalSum.Text = $"{table.Check} лв.";
-            //textBox2_Calories.Text = $"{calories} kcal";
-
         }
 
         private void button1_Click(object sender, EventArgs e)

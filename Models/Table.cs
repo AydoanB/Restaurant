@@ -9,9 +9,9 @@ namespace ConsoleApp1
     {
         private readonly List<IDish> dishesOnTable;
 
-        public Table(int tableNumber, List<IDish> dishesOnTable)
+        public Table(int tableNumber)
         {
-            this.dishesOnTable = dishesOnTable;
+            this.dishesOnTable= new List<IDish>();
             this.TableNumber = tableNumber;
         }
 

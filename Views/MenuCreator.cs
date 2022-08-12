@@ -58,6 +58,6 @@ namespace RestaurantManager
             textBox_Weight.Clear();
         }
 
-
+        
     }
 }
