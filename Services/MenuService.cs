@@ -32,7 +32,7 @@ namespace RestaurantManager.Services
             return this.dishes;
         }
 
-        public string GetAllForMenuList()
+        public string GetForMenuList()
         {
             return GetAll().Select(x=>x.ToString()).LastOrDefault();
         }

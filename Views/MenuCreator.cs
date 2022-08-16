@@ -38,7 +38,7 @@ namespace RestaurantManager
 
             menuService.CreateDish(model);
 
-            listBox1.Items.Add(menuService.GetAllForMenuList());
+            listBox1.Items.Add(menuService.GetForMenuList());
 
             ClearInputs();
         }
